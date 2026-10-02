@@ -2,9 +2,9 @@
 
 ## Overview
 
-**AramarkTrailhead** is an Adobe App Builder application running on Adobe I/O Runtime. It is a serverless Brand CSS Design Token Manager that stores token sets per brand, generates CSS custom properties, and publishes them to GitHub via Pull Requests. The downstream consumer is an Adobe Edge Delivery Services (EDS) site.
+**trailhead** is an Adobe App Builder application running on Adobe I/O Runtime. It is a serverless Brand CSS Design Token Manager that stores token sets per brand, generates CSS custom properties, and publishes them to GitHub via Pull Requests. The downstream consumer is an Adobe Edge Delivery Services (EDS) site.
 
-Package name: **`AramarkTrailhead`**. Deploy target depends on the Adobe I/O project/workspace bound via `aio app use` (do not assume a hardcoded static CDN URL).
+Package name: **`trailhead`**. Deploy target depends on the Adobe I/O project/workspace bound via `aio app use` (do not assume a hardcoded static CDN URL).
 
 **Porting tier:** this branch is the `to-staging` stack — `to-main` plus style-guide
 preview and RBAC enablement docs. Validate EDS CDN links in `preview.html` before
