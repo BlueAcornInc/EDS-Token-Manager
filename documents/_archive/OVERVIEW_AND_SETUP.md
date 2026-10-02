@@ -31,7 +31,7 @@
 
 If you manage a digital experience platform that serves multiple brands — think a large enterprise with Aramark, Pepsi, or any number of sub-brands, each needing its own colours, typography, and spacing — you know the pain of maintaining CSS per-brand. Rebuilding or redeploying your site every time a designer tweaks a brand colour is not sustainable.
 
-In this tutorial we'll build **AramarkEDSTaskrunner**: a serverless web application that lets your team:
+In this tutorial we'll build **EDSTaskrunner**: a serverless web application that lets your team:
 
 - **Create and manage multiple brand token sets** (colors, typography, breakpoints) through a visual UI
 - **Preview CSS custom properties live** as tokens are edited — no server round-trip
