@@ -10,7 +10,7 @@ const fetch = require('node-fetch')
 const namespace = Config.get('runtime.namespace')
 const hostname = Config.get('cna.hostname') || 'adobeioruntime.net'
 const packagejson = JSON.parse(fs.readFileSync('package.json').toString())
-const runtimePackage = 'AramarkTrailhead'
+const runtimePackage = 'trailhead'
 const actionUrl = `https://${namespace}.${hostname}/api/v1/web/${runtimePackage}/sample-app`
 
 // The deployed actions are secured with the `require-adobe-auth` annotation.
