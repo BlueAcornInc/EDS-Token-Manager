@@ -1,7 +1,7 @@
 # Archived documents
 
 These files are **historical / stale**. They describe an earlier PAT-based design,
-`AramarkEDSTaskrunner` naming, and schemas that no longer match the live app.
+`EDSTaskrunner` naming, and schemas that no longer match the live app.
 
 Do **not** use them for setup or architecture decisions.
 
