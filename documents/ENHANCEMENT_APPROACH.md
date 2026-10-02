@@ -1,8 +1,8 @@
 # Feasibility Study: Access Control, Role-Based Brand Visibility & AEM Integration
 
-## AramarkEDSTaskrunner — Brand CSS Token Manager
+## EDSTaskrunner — Brand CSS Token Manager
 
-This document evaluates three enhancements requested for the AramarkEDSTaskrunner application:
+This document evaluates three enhancements requested for the EDSTaskrunner application:
 
 1. **Author Permissions** — Controlling who can access and use the app, using existing organisational user groups
 2. **Brand-Level Data Visibility** — Ensuring individual brand managers see only their assigned brands, while administrators retain full visibility
