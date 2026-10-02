@@ -127,22 +127,22 @@ describe('manage-tokens: save', () => {
   }
 
   test('saves tokens and creates index entry', async () => {
-    const res = await main({ operation: 'save', brandName: 'aramark', tokens: sampleTokens })
+    const res = await main({ operation: 'save', brandName: 'TODO', tokens: sampleTokens })
     expect(res.statusCode).toBe(200)
-    expect(res.body.brandName).toBe('aramark')
-    expect(JSON.parse(_store['brand.aramark'])).toEqual(sampleTokens)
-    expect(JSON.parse(_store['brand.__index__'])).toContain('aramark')
-    expect(_store['brand.aramark.status']).toBe('drafted')
+    expect(res.body.brandName).toBe('TODO')
+    expect(JSON.parse(_store['brand.TODO'])).toEqual(sampleTokens)
+    expect(JSON.parse(_store['brand.__index__'])).toContain('TODO')
+    expect(_store['brand.TODO.status']).toBe('drafted')
   })
 
   test('does not duplicate brand in index on second save', async () => {
-    await main({ operation: 'save', brandName: 'aramark', tokens: sampleTokens })
+    await main({ operation: 'save', brandName: 'TODO', tokens: sampleTokens })
     await main({
       operation: 'save',
-      brandName: 'aramark',
+      brandName: 'TODO',
       tokens: { ...sampleTokens, colors: { primary: '#ff0000' } }
     })
-    expect(JSON.parse(_store['brand.__index__']).filter((b) => b === 'aramark').length).toBe(1)
+    expect(JSON.parse(_store['brand.__index__']).filter((b) => b === 'TODO').length).toBe(1)
   })
 
   test('sanitises brand name to kebab-case lowercase', async () => {
@@ -173,21 +173,21 @@ describe('manage-tokens: save', () => {
   })
 
   test('returns 400 when tokens is missing', async () => {
-    const res = await main({ operation: 'save', brandName: 'aramark' })
+    const res = await main({ operation: 'save', brandName: 'TODO' })
     expect(res.error.statusCode).toBe(400)
   })
 
   test('records audit metadata on save', async () => {
     const res = await main({
       operation: 'save',
-      brandName: 'aramark',
+      brandName: 'TODO',
       tokens: sampleTokens,
-      __authz_actor: { id: 'u1', email: 'editor@aramark.com', displayName: 'Editor' }
+      __authz_actor: { id: 'u1', email: 'editor@TODO.com', displayName: 'Editor' }
     })
     expect(res.statusCode).toBe(200)
-    expect(res.body.audit.lastSavedBy).toBe('editor@aramark.com')
+    expect(res.body.audit.lastSavedBy).toBe('editor@TODO.com')
     expect(res.body.audit.lastSavedAt).toBeDefined()
-    expect(JSON.parse(_store['brand.aramark.audit']).lastSavedBy).toBe('editor@aramark.com')
+    expect(JSON.parse(_store['brand.TODO.audit']).lastSavedBy).toBe('editor@TODO.com')
   })
 })
 
@@ -195,18 +195,18 @@ describe('manage-tokens: get', () => {
   const sampleTokens = { colors: { primary: '#e87722' } }
 
   beforeEach(() => {
-    _store['brand.aramark'] = JSON.stringify(sampleTokens)
+    _store['brand.TODO'] = JSON.stringify(sampleTokens)
   })
 
   test('returns draft tokens from state', async () => {
-    const res = await main({ operation: 'get', brandName: 'aramark' })
+    const res = await main({ operation: 'get', brandName: 'TODO' })
     expect(res.statusCode).toBe(200)
     expect(res.body.tokens).toEqual(sampleTokens)
     expect(res.body.source).toBe('draft')
   })
 
   test('returns schema defaults for indexed brand with no draft or CDN', async () => {
-    delete _store['brand.aramark']
+    delete _store['brand.TODO']
     _store['brand.__index__'] = JSON.stringify(['pending-brand'])
     const res = await main({ operation: 'get', brandName: 'pending-brand' })
     expect(res.statusCode).toBe(200)
@@ -229,29 +229,29 @@ describe('manage-tokens: delete', () => {
   beforeEach(async () => {
     await main({
       operation: 'save',
-      brandName: 'aramark',
+      brandName: 'TODO',
       tokens: { colors: { primary: '#e87722' } }
     })
   })
 
   test('clears draft tokens but keeps the brand indexed', async () => {
-    const res = await main({ operation: 'delete', brandName: 'aramark' })
+    const res = await main({ operation: 'delete', brandName: 'TODO' })
     expect(res.statusCode).toBe(200)
-    expect(_store['brand.aramark']).toBeUndefined()
-    expect(JSON.parse(_store['brand.__index__'] || '[]')).toContain('aramark')
+    expect(_store['brand.TODO']).toBeUndefined()
+    expect(JSON.parse(_store['brand.__index__'] || '[]')).toContain('TODO')
   })
 
   test('does not wipe brand meta (fullName/domain/siteCode survive a reset)', async () => {
     await main({
       operation: 'update-meta',
-      brandName: 'aramark',
-      fullName: 'Aramark HQ',
-      domain: 'aramark.com'
+      brandName: 'TODO',
+      fullName: 'TODO HQ',
+      domain: 'TODO.com'
     })
-    await main({ operation: 'delete', brandName: 'aramark' })
-    const meta = JSON.parse(_store['brand.aramark.meta'] || '{}')
-    expect(meta.fullName).toBe('Aramark HQ')
-    expect(meta.domain).toBe('aramark.com')
+    await main({ operation: 'delete', brandName: 'TODO' })
+    const meta = JSON.parse(_store['brand.TODO.meta'] || '{}')
+    expect(meta.fullName).toBe('TODO HQ')
+    expect(meta.domain).toBe('TODO.com')
   })
 
   test('returns 400 when brandName is missing', async () => {
@@ -262,16 +262,16 @@ describe('manage-tokens: delete', () => {
 
 describe('manage-tokens: repair', () => {
   test('adds missing brand to index', async () => {
-    const res = await main({ operation: 'repair', brandName: 'aramark' })
+    const res = await main({ operation: 'repair', brandName: 'TODO' })
     expect(res.statusCode).toBe(200)
-    expect(JSON.parse(_store['brand.__index__'])).toContain('aramark')
+    expect(JSON.parse(_store['brand.__index__'])).toContain('TODO')
   })
 
   test('is idempotent when brand already indexed', async () => {
-    _store['brand.__index__'] = JSON.stringify(['aramark'])
-    const res = await main({ operation: 'repair', brandName: 'aramark' })
+    _store['brand.__index__'] = JSON.stringify(['TODO'])
+    const res = await main({ operation: 'repair', brandName: 'TODO' })
     expect(res.statusCode).toBe(200)
-    expect(JSON.parse(_store['brand.__index__']).filter((b) => b === 'aramark').length).toBe(1)
+    expect(JSON.parse(_store['brand.__index__']).filter((b) => b === 'TODO').length).toBe(1)
   })
 })
 
