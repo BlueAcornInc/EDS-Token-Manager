@@ -7,7 +7,7 @@ application:
   web: web-src
   runtimeManifest:
     packages:
-      AramarkTrailhead:
+      trailhead:
         license: Apache-2.0
         actions:
           manage-tokens:
