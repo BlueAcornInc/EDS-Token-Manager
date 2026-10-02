@@ -8,7 +8,7 @@ description: "End-to-end debugging workflow for Adobe App Builder Runtime action
 ## Purpose
 
 Diagnose and resolve failures in Adobe App Builder / Adobe I/O Runtime actions for the
-AramarkEDSTaskrunner project.
+EDSTaskrunner project.
 
 ## When to Use
 
