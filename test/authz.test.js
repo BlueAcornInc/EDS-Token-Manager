@@ -48,7 +48,7 @@ describe('authorize (enforcement on)', () => {
   test('denies when no groups', async () => {
     const access = await authorize(
       { AUTHZ_ENFORCE: 'true', __authz_groups: [] },
-      { operation: 'save', brandName: 'aramark' }
+      { operation: 'save', brandName: 'TODO' }
     )
     expect(access.allowed).toBe(false)
     expect(access.statusCode).toBe(403)
@@ -57,7 +57,7 @@ describe('authorize (enforcement on)', () => {
   test('viewer cannot write', async () => {
     const access = await authorize(
       { AUTHZ_ENFORCE: true, __authz_groups: [VIEWER_GROUP] },
-      { operation: 'save', brandName: 'aramark' }
+      { operation: 'save', brandName: 'TODO' }
     )
     expect(access.allowed).toBe(false)
     expect(access.role).toBe('viewer')
@@ -66,7 +66,7 @@ describe('authorize (enforcement on)', () => {
   test('viewer can read', async () => {
     const access = await authorize(
       { AUTHZ_ENFORCE: true, __authz_groups: [VIEWER_GROUP] },
-      { operation: 'get', brandName: 'aramark' }
+      { operation: 'get', brandName: 'TODO' }
     )
     expect(access.allowed).toBe(true)
   })
@@ -75,9 +75,9 @@ describe('authorize (enforcement on)', () => {
     const access = await authorize(
       {
         AUTHZ_ENFORCE: 'true',
-        __authz_groups: [`${BRAND_MANAGER_PREFIX}aramark`]
+        __authz_groups: [`${BRAND_MANAGER_PREFIX}TODO`]
       },
-      { operation: 'publish', brandName: 'Aramark' }
+      { operation: 'publish', brandName: 'TODO' }
     )
     expect(access.allowed).toBe(true)
     expect(access.role).toBe('brand-manager')
@@ -87,7 +87,7 @@ describe('authorize (enforcement on)', () => {
     const access = await authorize(
       {
         AUTHZ_ENFORCE: 'true',
-        __authz_groups: [`${BRAND_MANAGER_PREFIX}aramark`]
+        __authz_groups: [`${BRAND_MANAGER_PREFIX}TODO`]
       },
       { operation: 'save', brandName: 'pepsi' }
     )
@@ -99,7 +99,7 @@ describe('authorize (enforcement on)', () => {
     const bm = await authorize(
       {
         AUTHZ_ENFORCE: 'true',
-        __authz_groups: [`${BRAND_MANAGER_PREFIX}aramark`]
+        __authz_groups: [`${BRAND_MANAGER_PREFIX}TODO`]
       },
       { operation: 'create', brandName: 'new-site' }
     )
@@ -107,7 +107,7 @@ describe('authorize (enforcement on)', () => {
 
     const admin = await authorize(
       { AUTHZ_ENFORCE: 'true', __authz_groups: [ADMIN_GROUP] },
-      { operation: 'remove', brandName: 'aramark' }
+      { operation: 'remove', brandName: 'TODO' }
     )
     expect(admin.allowed).toBe(true)
   })
