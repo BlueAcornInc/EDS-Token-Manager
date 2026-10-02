@@ -3,7 +3,7 @@
 
 ## Overview
 
-Trailhead is **environment agnostic** — it writes to the aramark-mb GitHub repo and doesn't have environment-specific configs of its own. It lives in one place: the **Production workspace** in the Developer Console, published once to the EC Shell.
+Trailhead is **environment agnostic** — it writes to the GitHub repo and doesn't have environment-specific configs of its own. It lives in one place: the **Production workspace** in the Developer Console, published once to the EC Shell.
 
 The app already has all the runtime plumbing (`exc-runtime.js`, `@adobe/exc-app`, `initRuntime()`). Once deployed as a registered extension, the shell auto-injects IMS credentials. No token entry needed.
 
