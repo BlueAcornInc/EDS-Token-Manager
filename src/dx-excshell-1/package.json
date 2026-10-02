@@ -1,13 +1,13 @@
 {
   "name": "trailhead-brand-manager",
   "version": "1.0.0",
-  "description": "Trailhead — Brand Token Manager for Aramark Parks & Destinations",
-  "keywords": ["adobe-app-builder", "exc-shell", "aramark-destinations"],
+  "description": "Trailhead — Brand Token Manager",
+  "keywords": ["adobe-app-builder", "exc-shell", "TODO"],
   "adobe": {
     "app-builder": {
       "title": "Trailhead",
-      "shortDescription": "Brand token manager for Aramark EDS sites",
-      "longDescription": "Manage brand design tokens and create new EDS sites for Aramark Parks & Destinations and Collegiate Hospitality."
+      "shortDescription": "Brand token manager for EDS sites",
+      "longDescription": "Manage brand design tokens and create new EDS sites."
     }
   }
 }
