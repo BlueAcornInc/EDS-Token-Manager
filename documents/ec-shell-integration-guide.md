@@ -31,7 +31,7 @@ The existing `application:` block remains in `app.config.yaml` as a fallback for
 
 The shell extension must be deployed to a **Production** workspace. This step has to be done in the browser — `aio` CLI cannot create workspaces.
 
-1. Go to [developer.adobe.com/console](https://developer.adobe.com/console) → your project (`AramarkEDSTaskrunner`)
+1. Go to [developer.adobe.com/console](https://developer.adobe.com/console) → your project (`EDSTaskrunner`)
 2. Click **Add workspace** → **Production**
 3. Name it `Production`
 4. Inside the Production workspace, click **Add service → API**
@@ -46,7 +46,7 @@ The shell extension must be deployed to a **Production** workspace. This step ha
 With the downloaded `console.json` open, set the Production secrets on the repo. These mirror the `*_STAGE` secrets from the Test workspace setup.
 
 ```bash
-REPO="aramark-destinations/trailhead-app"
+REPO="TODO"
 
 # From the Production workspace console.json → project → workspace
 gh secret set CLIENTID_PROD              --repo $REPO --body "<client_id>"
@@ -61,7 +61,7 @@ gh secret set AIO_RUNTIME_AUTH_PROD      --repo $REPO --body "<auth>"
 
 # Project/workspace IDs (from console.json)
 gh secret set AIO_PROJECT_ID_PROD                    --repo $REPO --body "<project_id>"
-gh secret set AIO_PROJECT_NAME_PROD                  --repo $REPO --body "AramarkEDSTaskrunner"
+gh secret set AIO_PROJECT_NAME_PROD                  --repo $REPO --body "EDSTaskrunner"
 gh secret set AIO_PROJECT_ORG_ID_PROD                --repo $REPO --body "<org_id>"
 gh secret set AIO_PROJECT_WORKSPACE_ID_PROD          --repo $REPO --body "<workspace_id>"
 gh secret set AIO_PROJECT_WORKSPACE_NAME_PROD        --repo $REPO --body "Production"
@@ -74,7 +74,7 @@ gh secret set SCOPES_PROD --repo $REPO --body "<scopes string from SCOPES_STAGE>
 
 To verify all secrets are set:
 ```bash
-gh secret list --repo aramark-destinations/trailhead-app
+gh secret list --repo TODO
 ```
 
 ---
@@ -149,7 +149,7 @@ jobs:
 
 After the first Production deploy completes:
 
-1. Go to the Developer Console → `AramarkEDSTaskrunner` project → **Production** workspace
+1. Go to the Developer Console → `EDSTaskrunner` project → **Production** workspace
 2. Find the **App Builder App** section
 3. Click **Submit for review** if prompted, or click **Approve / Publish** directly
    - Internal org apps typically allow self-approval
@@ -162,7 +162,7 @@ After the first Production deploy completes:
 The app only appears in the EC Shell menu for users assigned to it.
 
 1. Go to [adminconsole.adobe.com](https://adminconsole.adobe.com) → **Products**
-2. Find **AramarkEDSTaskrunner** (the App Builder product)
+2. Find **EDSTaskrunner** (the App Builder product)
 3. Open or create a product profile (e.g. "Trailhead Users")
 4. Add users or groups who should see Trailhead
 
@@ -187,6 +187,6 @@ Once a user loads the app through the EC Shell:
 | Workspace | Triggered by | Published to shell | Purpose |
 |---|---|---|---|
 | Test | push to `staging` branch | No (`noPublish`) | Developer testing |
-| Production | push to `main` | Yes | Live, used by Aramark team |
+| Production | push to `main` | Yes | Live, used by client team |
 
 Dev and Stage workspaces in the console are available but Trailhead doesn't need them — the app has no environment-specific configuration of its own. The staging CI deploy to the Test workspace is the R&D path; Production is the single live deployment.
