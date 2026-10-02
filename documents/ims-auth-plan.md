@@ -14,14 +14,14 @@
 - Users open the app and are prompted to **Sign in with Adobe** — one click, no copying tokens
 - After login the app knows who they are (name, avatar, org) and auto-wires all action headers
 - Backend actions use the **technical account (S2S OAuth)** for all Adobe API calls — no user token ever leaves the browser for Adobe-side operations
-- Only users in the Aramark IMS org can load and use the app
+- Only users in the IMS org can load and use the app
 
 ---
 
 ## Two Deployment Contexts
 
 ### Context A — Embedded in Experience Cloud Shell (long-term home)
-When the app is loaded via **Main Menu → Tools → Aramark Destinations → Trailhead**, Adobe's shell injects IMS credentials automatically via the `exc-app` runtime. The existing `initRuntime()` callback in `index.js` already handles this — it receives `imsToken`, `imsOrg`, and `imsProfile` without any user action.
+When the app is loaded via **Main Menu → Tools →  Client Name → Trailhead**, Adobe's shell injects IMS credentials automatically via the `exc-app` runtime. The existing `initRuntime()` callback in `index.js` already handles this — it receives `imsToken`, `imsOrg`, and `imsProfile` without any user action.
 
 **Required work:** Ensure the app is registered as an App Builder extension in the Experience Cloud console. No auth UI changes needed for this path.
 
@@ -73,7 +73,7 @@ App loads normally — no settings panel interaction needed
 
 ### Access Control via Org Check
 
-After token exchange, fetch the user's org memberships and verify the Aramark org ID (`B63321D5692DBE130A495FC5@AdobeOrg`) is present. If not, show an "Access restricted" screen. This is a client-side guard — the backend action-level guard (below) is the authoritative one.
+After token exchange, fetch the user's org memberships and verify the Adobe org ID (`TODO`) is present. If not, show an "Access restricted" screen. This is a client-side guard — the backend action-level guard (below) is the authoritative one.
 
 ### Files to create/change
 | File | Change |
@@ -90,7 +90,7 @@ IMS access tokens expire in 24 hours. Store the expiry time alongside the token 
 
 ## Phase 2 — Action-Level Org Allowlist
 
-**What:** Each action validates that the request's `x-gw-ims-org-id` header matches the Aramark org. This is the authoritative access gate — it runs inside the trusted Adobe I/O Runtime environment regardless of how the frontend was accessed.
+**What:** Each action validates that the request's `x-gw-ims-org-id` header matches the org. This is the authoritative access gate — it runs inside the trusted Adobe I/O Runtime environment regardless of how the frontend was accessed.
 
 **Where:** `actions/utils.js` — new `assertAllowedOrg(params)` helper:
 
@@ -179,8 +179,8 @@ Once Phases 1–3 are implemented:
 | 4 — Remove manual token UI | 2 hours | Needs Phase 1 complete |
 
 ### Prerequisites for Phase 1
-1. In Adobe Developer Console → `AramarkEDSTaskrunner` project → add a new credential of type **OAuth Single Page App**
-2. Set allowed redirect URI to the app's static URL: `https://3924634-aramarkedstaskrunner-test.adobeio-static.net`
+1. In Adobe Developer Console → `EDSTaskrunner` project → add a new credential of type **OAuth Single Page App**
+2. Set allowed redirect URI to the app's static URL: `TODO`
 3. Note the new `client_id` — this is the SPA client ID used in the PKCE flow (different from the S2S client ID)
 
 ### Prerequisites for Phase 3
