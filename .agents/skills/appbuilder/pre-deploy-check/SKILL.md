@@ -1,6 +1,6 @@
 ---
 name: "Pre-Deploy Check"
-description: "Pre-deployment compliance gate for AramarkEDSTaskrunner App Builder app. Validates lint, tests, app.config.yaml integrity, env vars, and bundle size before deploying to Adobe I/O Runtime."
+description: "Pre-deployment compliance gate for EDSTaskrunner App Builder app. Validates lint, tests, app.config.yaml integrity, env vars, and bundle size before deploying to Adobe I/O Runtime."
 ---
 
 # Skill: Pre-Deploy Check
