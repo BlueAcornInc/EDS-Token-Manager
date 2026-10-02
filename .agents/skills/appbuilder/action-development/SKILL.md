@@ -1,6 +1,6 @@
 ---
 name: "Action Development"
-description: "TDD workflow for building or modifying Adobe App Builder Runtime actions in the AramarkEDSTaskrunner project. Covers action structure, auth patterns, state store usage, param validation, and testing."
+description: "TDD workflow for building or modifying Adobe App Builder Runtime actions in the EDSTaskrunner project. Covers action structure, auth patterns, state store usage, param validation, and testing."
 ---
 
 # Skill: Action Development
