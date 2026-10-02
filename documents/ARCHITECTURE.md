@@ -1,4 +1,4 @@
-# AramarkEDSTaskrunner — Technical Architecture & Documentation
+# EDSTaskrunner — Technical Architecture & Documentation
 
 > **⚠️ Stale document.** This write-up predates the Trailhead rename, GitHub App auth,
 > and the current action set. Prefer **`README.md`**, **`AGENTS.md`**, and
