@@ -13,8 +13,8 @@ const fetch = require('node-fetch')
 const stateLib = require('@adobe/aio-lib-state')
 const tokenSchema = require('../config/token-schema.json')
 
-const CDN_BASE = 'https://staging--aramark-mb--aramark-destinations.aem.live'
-const STATE_TTL = 31536000
+const CDN_BASE = 'TODO'
+const STATE_TTL = TODO
 
 function parseCssTokens (css) {
   const reverseMap = {}
