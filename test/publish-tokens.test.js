@@ -64,9 +64,9 @@ const SAMPLE_TOKENS = {
 }
 
 const BASE_PARAMS = {
-  brandName: 'aramark',
-  GITHUB_OWNER: 'aramark-org',
-  GITHUB_REPO: 'aramark-eds',
+  brandName: 'TODO',
+  GITHUB_OWNER: 'TODO-org',
+  GITHUB_REPO: 'TODO-eds',
   GITHUB_APP_ID: '1',
   GITHUB_APP_PRIVATE_KEY: 'unused-mocked',
   GITHUB_APP_INSTALLATION_ID: '1',
@@ -78,22 +78,22 @@ const MOCK_SHA_RESPONSE = {
 }
 
 const MOCK_BRANCH_RESPONSE = {
-  ref: 'refs/heads/TB-ARAMARK-1',
+  ref: 'refs/heads/TB-TODO-1',
   object: { sha: 'abc123def456abc123def456abc123def456abc1' }
 }
 
 const MOCK_FILE_PUT_RESPONSE = {
   content: {
-    html_url: 'https://github.com/aramark-org/aramark-eds/blob/TB-ARAMARK-1/brands/aramark/tokens.css'
+    html_url: 'TODO'
   }
 }
 
 const MOCK_PR_RESPONSE = {
   number: 42,
-  title: 'Brand tokens: aramark → staging',
-  html_url: 'https://github.com/aramark-org/aramark-eds/pull/42',
+  title: 'Brand tokens: TODO → staging',
+  html_url: 'TODO',
   state: 'open',
-  head: { ref: 'TB-ARAMARK-1' },
+  head: { ref: 'TB-TODO-1' },
   base: { ref: 'staging' }
 }
 
@@ -118,7 +118,7 @@ beforeEach(() => {
 
 describe('publish-tokens: happy path', () => {
   beforeEach(() => {
-    _store['brand.aramark'] = JSON.stringify(SAMPLE_TOKENS)
+    _store['brand.TODO'] = JSON.stringify(SAMPLE_TOKENS)
   })
 
   test('returns 200 with PR details and CSS file info', async () => {
@@ -126,22 +126,22 @@ describe('publish-tokens: happy path', () => {
     const res = await main(BASE_PARAMS)
 
     expect(res.statusCode).toBe(200)
-    expect(res.body.brand).toBe('aramark')
+    expect(res.body.brand).toBe('TODO')
     expect(res.body.css_file).toBeDefined()
-    expect(res.body.css_file.path).toBe('brands/aramark/tokens.css')
+    expect(res.body.css_file.path).toBe('brands/TODO/tokens.css')
     expect(res.body.css_file.variables).toBe(SCHEMA_VAR_COUNT)
     expect(res.body.pull_request).toBeDefined()
     expect(res.body.pull_request.number).toBe(42)
     expect(res.body.pull_request.url).toContain('github.com')
-    expect(_store['brand.aramark.status']).toBe('pending')
-    expect(JSON.parse(_store['brand.aramark.audit']).lastPr.number).toBe(42)
+    expect(_store['brand.TODO.status']).toBe('pending')
+    expect(JSON.parse(_store['brand.TODO.audit']).lastPr.number).toBe(42)
   })
 
   test('uses the brand site code in the preview URL and PR description', async () => {
     _store['brand.onp'] = JSON.stringify(SAMPLE_TOKENS)
     _store['brand.onp.meta'] = JSON.stringify({ siteCode: 'onp' })
     const params = { ...BASE_PARAMS, brandName: 'onp' }
-    const previewUrl = 'https://tb-onp-1--onp--aramark-org.aem.page/'
+    const previewUrl = 'TODO'
     let prBody
     let branchRef
 
@@ -191,16 +191,16 @@ describe('publish-tokens: happy path', () => {
       .mockResolvedValueOnce(mockResponse(MOCK_PR_RESPONSE))
 
     await main(BASE_PARAMS)
-    expect(capturedPutUrl).toContain('brands/aramark/tokens.css')
+    expect(capturedPutUrl).toContain('brands/TODO/tokens.css')
   })
 
   test('updates an existing open create-site PR instead of opening a new one', async () => {
-    _store['brand.aramark.pr'] = JSON.stringify({
+    _store['brand.TODO.pr'] = JSON.stringify({
       number: 7,
-      branch: 'TB-ARAMARK-0',
-      url: 'https://github.com/aramark-org/aramark-eds/pull/7'
+      branch: 'TB-TODO-0',
+      url: 'TODO'
     })
-    _store['brand.aramark.meta'] = JSON.stringify({ siteCode: 'onp' })
+    _store['brand.TODO.meta'] = JSON.stringify({ siteCode: 'onp' })
 
     mockFetch
       .mockResolvedValueOnce(mockResponse({ number: 7, state: 'open' }))
@@ -209,10 +209,10 @@ describe('publish-tokens: happy path', () => {
 
     const res = await main(BASE_PARAMS)
     expect(res.statusCode).toBe(200)
-    expect(res.body.preview_url).toBe('https://tb-aramark-0--onp--aramark-org.aem.page/')
+    expect(res.body.preview_url).toBe('TODO')
     expect(res.body.pull_request.number).toBe(7)
     expect(res.body.pull_request.updated).toBe(true)
-    expect(_store['brand.aramark.status']).toBe('pending')
+    expect(_store['brand.TODO.status']).toBe('pending')
   })
 })
 
@@ -225,7 +225,7 @@ describe('publish-tokens: parameter validation', () => {
   })
 
   test('returns 500 when GITHUB_OWNER/REPO are missing', async () => {
-    const res = await main({ brandName: 'aramark' })
+    const res = await main({ brandName: 'TODO' })
     expect(res.error.statusCode).toBe(500)
   })
 })
@@ -240,7 +240,7 @@ describe('publish-tokens: brand not found', () => {
 
 describe('publish-tokens: GitHub API error handling', () => {
   beforeEach(() => {
-    _store['brand.aramark'] = JSON.stringify(SAMPLE_TOKENS)
+    _store['brand.TODO'] = JSON.stringify(SAMPLE_TOKENS)
   })
 
   test('returns 500 when getBranchSHA fails', async () => {
@@ -273,7 +273,7 @@ describe('publish-tokens: GitHub API error handling', () => {
 
 describe('publish-tokens: CSS generation', () => {
   beforeEach(() => {
-    _store['brand.aramark'] = JSON.stringify(SAMPLE_TOKENS)
+    _store['brand.TODO'] = JSON.stringify(SAMPLE_TOKENS)
   })
 
   test('generated CSS contains :root block and schema cssVars', async () => {
