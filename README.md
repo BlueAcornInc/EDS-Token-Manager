@@ -1,6 +1,6 @@
-# Trailhead (AramarkTrailhead)
+# EDS Token Manager (trailhead)
 
-Adobe App Builder tool for **Parks & Destinations** brand sites on Edge Delivery Services (EDS).
+Adobe App Builder tool for brand sites on Edge Delivery Services (EDS).
 
 Admins can:
 
@@ -33,7 +33,7 @@ Admins can:
 | GitHub | GitHub App installation token (not a PAT) |
 | UI | Vanilla JS SPA in Experience Cloud Shell (`web-src/`) |
 
-Package name in Runtime: **`AramarkTrailhead`**.
+Package name in Runtime: **`trailhead`**.
 
 Git operations against the EDS repo (`create-site`, `publish-tokens`, `list-sites`,
 `manage-tokens` inventory, `remove-brand`, `content-status`) all default to the
