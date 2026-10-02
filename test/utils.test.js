@@ -53,7 +53,7 @@ describe('stringParameters', () => {
   })
   test('redacts GitHub App private key and related secrets', () => {
     const params = {
-      brandName: 'aramark',
+      brandName: 'TODO',
       GITHUB_APP_PRIVATE_KEY: '-----BEGIN RSA PRIVATE KEY-----\nfake\n-----END RSA PRIVATE KEY-----',
       GITHUB_TOKEN: 'ghp_secret',
       AEM_BEARER_TOKEN: 'aem-secret',
@@ -64,7 +64,7 @@ describe('stringParameters', () => {
     expect(logged).toContain('"GITHUB_TOKEN":"<hidden>"')
     expect(logged).toContain('"AEM_BEARER_TOKEN":"<hidden>"')
     expect(logged).toContain('"apiKey":"<hidden>"')
-    expect(logged).toContain('"brandName":"aramark"')
+    expect(logged).toContain('"brandName":"TODO"')
     expect(logged).not.toContain('BEGIN RSA')
     expect(logged).not.toContain('ghp_secret')
     expect(logged).not.toContain('aem-secret')
@@ -83,7 +83,7 @@ describe('resolveActor', () => {
   test('decodes IMS-like JWT payload without verifying signature', () => {
     const header = Buffer.from(JSON.stringify({ alg: 'none' })).toString('base64url')
     const payload = Buffer.from(JSON.stringify({
-      email: 'jane@aramark.com',
+      email: 'jane@TODO.com',
       user_id: 'jane',
       name: 'Jane'
     })).toString('base64url')
@@ -91,7 +91,7 @@ describe('resolveActor', () => {
     const actor = utils.resolveActor({
       __ow_headers: { authorization: `Bearer ${token}` }
     })
-    expect(actor.email).toBe('jane@aramark.com')
+    expect(actor.email).toBe('jane@TODO.com')
     expect(actor.id).toBe('jane')
     expect(actor.displayName).toBe('Jane')
   })
@@ -211,12 +211,12 @@ describe('buildSiteCode / resolveEdsSiteCode / edsCdnOrigin', () => {
     expect(utils.edsCdnOrigin({
       ref: 'staging',
       siteCode: 'lta',
-      org: 'aramark-destinations'
-    })).toBe('https://staging--lta--aramark-destinations.aem.live')
+      org: 'TODO'
+    })).toBe('TODO')
     expect(utils.edsCdnOrigin({
       ref: 'staging',
       siteCode: 'lta',
-      org: 'aramark-destinations'
-    })).not.toContain('aramark-mb')
+      org: 'TODO'
+    })).not.toContain('TODO')
   })
 })
