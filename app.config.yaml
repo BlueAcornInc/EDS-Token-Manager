@@ -1,0 +1,106 @@
+extensions:
+  dx/excshell/1:
+    $include: src/dx-excshell-1/ext.config.yaml
+
+application:
+  actions: actions
+  web: web-src
+  runtimeManifest:
+    packages:
+      AramarkTrailhead:
+        license: Apache-2.0
+        actions:
+          manage-tokens:
+            function: actions/manage-tokens/index.js
+            web: "yes"
+            runtime: nodejs:22
+            inputs:
+              LOG_LEVEL: info
+              AUTHZ_ENFORCE: $AUTHZ_ENFORCE
+              GITHUB_APP_ID: $GITHUB_APP_ID
+              GITHUB_APP_PRIVATE_KEY: $GITHUB_APP_PRIVATE_KEY
+              GITHUB_APP_INSTALLATION_ID: $GITHUB_APP_INSTALLATION_ID
+              GITHUB_OWNER: $GITHUB_OWNER
+              GITHUB_REPO: $GITHUB_REPO
+            annotations:
+              require-adobe-auth: true
+              final: true
+
+          publish-tokens:
+            function: actions/publish-tokens/index.js
+            web: "yes"
+            runtime: nodejs:22
+            inputs:
+              LOG_LEVEL: info
+              AUTHZ_ENFORCE: $AUTHZ_ENFORCE
+              GITHUB_APP_ID: $GITHUB_APP_ID
+              GITHUB_APP_PRIVATE_KEY: $GITHUB_APP_PRIVATE_KEY
+              GITHUB_APP_INSTALLATION_ID: $GITHUB_APP_INSTALLATION_ID
+              GITHUB_OWNER: $GITHUB_OWNER
+              GITHUB_REPO: $GITHUB_REPO
+            annotations:
+              require-adobe-auth: true
+              final: true
+
+          list-sites:
+            function: actions/list-sites/index.js
+            web: "yes"
+            runtime: nodejs:22
+            inputs:
+              LOG_LEVEL: info
+              GITHUB_APP_ID: $GITHUB_APP_ID
+              GITHUB_APP_PRIVATE_KEY: $GITHUB_APP_PRIVATE_KEY
+              GITHUB_APP_INSTALLATION_ID: $GITHUB_APP_INSTALLATION_ID
+              GITHUB_OWNER: $GITHUB_OWNER
+              GITHUB_REPO: $GITHUB_REPO
+            annotations:
+              require-adobe-auth: true
+              final: true
+
+          create-site:
+            function: actions/create-site/index.js
+            web: "yes"
+            runtime: nodejs:22
+            inputs:
+              LOG_LEVEL: info
+              AUTHZ_ENFORCE: $AUTHZ_ENFORCE
+              GITHUB_APP_ID: $GITHUB_APP_ID
+              GITHUB_APP_PRIVATE_KEY: $GITHUB_APP_PRIVATE_KEY
+              GITHUB_APP_INSTALLATION_ID: $GITHUB_APP_INSTALLATION_ID
+              GITHUB_OWNER: $GITHUB_OWNER
+              GITHUB_REPO: $GITHUB_REPO
+            annotations:
+              require-adobe-auth: true
+              final: true
+
+          remove-brand:
+            function: actions/remove-brand/index.js
+            web: "yes"
+            runtime: nodejs:22
+            inputs:
+              LOG_LEVEL: info
+              AUTHZ_ENFORCE: $AUTHZ_ENFORCE
+              GITHUB_APP_ID: $GITHUB_APP_ID
+              GITHUB_APP_PRIVATE_KEY: $GITHUB_APP_PRIVATE_KEY
+              GITHUB_APP_INSTALLATION_ID: $GITHUB_APP_INSTALLATION_ID
+              GITHUB_OWNER: $GITHUB_OWNER
+              GITHUB_REPO: $GITHUB_REPO
+            annotations:
+              require-adobe-auth: true
+              final: true
+
+          content-status:
+            function: actions/content-status/index.js
+            web: "yes"
+            runtime: nodejs:22
+            inputs:
+              LOG_LEVEL: info
+              AEM_BEARER_TOKEN: $AEM_BEARER_TOKEN
+              GITHUB_APP_ID: $GITHUB_APP_ID
+              GITHUB_APP_PRIVATE_KEY: $GITHUB_APP_PRIVATE_KEY
+              GITHUB_APP_INSTALLATION_ID: $GITHUB_APP_INSTALLATION_ID
+              GITHUB_OWNER: $GITHUB_OWNER
+              GITHUB_REPO: $GITHUB_REPO
+            annotations:
+              require-adobe-auth: true
+              final: true

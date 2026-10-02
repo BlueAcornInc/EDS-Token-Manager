@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trailhead</title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css">
+  <script src="./src/app.js" type="module"></script>
+</head>
+<body>
+
+  <!-- Sign-in gate (shown before auth completes) -->
+  <div id="sign-in-screen" class="sign-in-screen" style="display:none" aria-live="polite">
+    <div class="sign-in-card">
+      <div class="sign-in-logo">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#E0A165" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <path d="M3 18l5-9 4 6 3-5 6 8"/>
+        </svg>
+        <span>Trailhead</span>
+      </div>
+      <h1 class="sign-in-title">Brand Token Manager</h1>
+      <p class="sign-in-desc">Sign in with your Adobe account to manage brand design tokens for Aramark Parks &amp; Destinations.</p>
+      <a href="https://experience.adobe.com" class="sign-in-btn">
+        <i class="ph ph-arrow-square-out" style="font-size:18px" aria-hidden="true"></i>
+        Open in Experience Cloud
+      </a>
+    </div>
+  </div>
+
+  <!-- App shell — header persists across all views -->
+  <header class="app-header" id="app-header"></header>
+
+  <!-- View container — content swapped on navigation -->
+  <main id="app-view"></main>
+
+  <!-- Shared overlays (available to all views) -->
+  <div id="loading-overlay" class="loading-overlay" aria-live="polite">
+    <div class="loading-box">
+      <span class="spinner"></span>
+      <span id="loading-message">Loading…</span>
+    </div>
+  </div>
+
+  <div id="toast-container" class="toast-container" aria-live="assertive"></div>
+
+</body>
+</html>

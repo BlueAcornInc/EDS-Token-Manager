@@ -1,0 +1,12 @@
+{
+  "colors": {
+    "primary":    { "type": "color",  "default": "#e87722", "label": "Primary Color" },
+    "secondary":  { "type": "color",  "default": "#003865", "label": "Secondary Color" },
+    "accent":     { "type": "color",  "default": "#f5a55a", "label": "Accent Color" },
+    "background": { "type": "color",  "default": "#ffffff", "label": "Background" }
+  },
+  "typography": {
+    "fontFamilyPrimary":   { "type": "string", "default": "\"Source Sans Pro\", Arial, sans-serif", "label": "Primary Font Family" },
+    "fontFamilySecondary": { "type": "string", "default": "\"Merriweather\", Georgia, serif",       "label": "Secondary Font Family" }
+  }
+}

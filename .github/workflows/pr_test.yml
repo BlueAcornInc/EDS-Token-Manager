@@ -1,0 +1,64 @@
+name: AIO App CI
+
+on: [pull_request]
+
+jobs:
+  test:
+    name: Test PR
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Use Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: npm install
+        run: npm ci
+
+      - name: Cache AIO CLI
+        id: cache-aio
+        uses: actions/cache@v4
+        with:
+          path: /usr/local/lib/node_modules/@adobe/aio-cli
+          key: aio-cli-11.x.x-ubuntu
+
+      - name: Setup CLI
+        if: steps.cache-aio.outputs.cache-hit != 'true'
+        uses: adobe/aio-cli-setup-action@1.3.0
+        with:
+          os: ubuntu-latest
+          version: 11.x.x
+
+      - name: Link AIO CLI binary
+        if: steps.cache-aio.outputs.cache-hit == 'true'
+        run: sudo ln -sf /usr/local/lib/node_modules/@adobe/aio-cli/bin/run /usr/local/bin/aio
+
+      - name: Auth
+        uses: adobe/aio-apps-action@3.3.0
+        with:
+          os: ubuntu-latest
+          command: oauth_sts
+          CLIENTID: ${{ secrets.CLIENTID_STAGE }}
+          CLIENTSECRET: ${{ secrets.CLIENTSECRET_STAGE }}
+          TECHNICALACCOUNTID: ${{ secrets.TECHNICALACCID_STAGE }}
+          TECHNICALACCOUNTEMAIL: ${{ secrets.TECHNICALACCEMAIL_STAGE }}
+          IMSORGID: ${{ secrets.IMSORGID_STAGE }}
+          SCOPES: ${{ secrets.SCOPES_STAGE }}
+
+      - name: Build
+        env:
+          AIO_RUNTIME_NAMESPACE: ${{ secrets.AIO_RUNTIME_NAMESPACE_STAGE }}
+        uses: adobe/aio-apps-action@3.3.0
+        with:
+          os: ubuntu-latest
+          command: build
+
+      - name: Test
+        uses: adobe/aio-apps-action@3.3.0
+        with:
+          os: ubuntu-latest
+          command: test

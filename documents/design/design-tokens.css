@@ -1,0 +1,110 @@
+/* ============================================================
+   TRAILHEAD — Design tokens
+   Canonical source of truth. All three prototype screens
+   (status dashboard, brand token manager, icon manager, UE
+   picker) derive their inline styles from these values —
+   they were duplicated per-file in the prototypes for
+   portability, but should be consumed from here in the
+   real build.
+
+   Origin: adapted from lakepowell.com's live EDS theme tokens
+   (theme-dark / theme-light sections, color-primary /
+   color-secondary / color-white button variants) and
+   restructured for a dense internal ops dashboard.
+   ============================================================ */
+
+:root {
+  /* ---- Color: surfaces ---- */
+  --color-canyon-ink: #0B2B3C;     /* dark theme bg / top bar / nav */
+  --color-canyon-ink-2: #11384B;   /* raised surface on dark (inputs, hover) */
+  --color-canyon-ink-3: #163F54;   /* active/selected state on dark */
+  --color-bone: #F5F1E8;           /* light theme bg, app background */
+  --color-bone-raised: #FFFFFF;    /* card/panel surfaces on light */
+  --color-rim-light: #E8DCC4;      /* borders/dividers on light surfaces */
+  --color-rim-dark: #1F4A5E;       /* borders/dividers on dark surfaces */
+
+  /* ---- Color: brand ---- */
+  --color-primary: #1C6E8C;        /* lake-teal — primary actions, links, focus rings */
+  --color-primary-light: #2C8BB0;  /* hover state for primary */
+  --color-secondary: #C97D3F;      /* sandstone — secondary actions, accents, badges */
+  --color-secondary-light: #E0A165;
+
+  /* ---- Color: text ---- */
+  --color-text: #3D4A4F;           /* body text on light backgrounds */
+  --color-text-soft: #6B7780;      /* secondary/muted text on light */
+  --color-text-on-dark-muted: #AFC4CC; /* muted text on dark backgrounds */
+
+  /* ---- Color: status semantics ----
+     Used consistently across drift indicators, environment
+     status pills, and the icon-approval queue. Do not
+     introduce new status colors without updating this table. */
+  --color-status-ok: #3F8F5F;
+  --color-status-ok-bg: #E7F2EA;
+  --color-status-warn: #C97D3F;     /* shared with --color-secondary by design */
+  --color-status-warn-bg: #FBEDE0;
+  --color-status-bad: #B0473D;
+  --color-status-bad-bg: #FAE7E4;
+
+  /* ---- Color: environment identity ----
+     Drives the global environment switcher. Each environment
+     has exactly one color across the entire app — never
+     reused for anything else. */
+  --color-env-dev: #6B7780;
+  --color-env-dev-bg: #EEF0F1;
+  --color-env-staging: #C97D3F;
+  --color-env-staging-bg: #FBEDE0;
+  --color-env-production: #1C6E8C;
+  --color-env-production-bg: #E3EEF1;
+
+  /* ---- Typography ---- */
+  --font-display: 'Archivo', sans-serif;   /* headings, eyebrows, button labels */
+  --font-body: 'Inter', sans-serif;        /* body copy, inputs, nav */
+  --font-mono: 'JetBrains Mono', monospace; /* counts, hex values, IDs */
+
+  --font-weight-display: 700;
+  --font-weight-display-heavy: 800;
+
+  --text-h1: 23px;
+  --text-h2: 14.5px;
+  --text-body: 14px;
+  --text-small: 12.5px;
+  --text-micro: 11px;       /* eyebrows, table headers — always uppercase, 0.04–0.1em tracking */
+
+  /* ---- Spacing ---- */
+  --space-page-padding: 28px;
+  --space-section-gap: 20px;
+  --space-card-gap: 14px;
+  --space-card-padding: 18px;
+
+  /* ---- Radius ---- */
+  --radius-sm: 4px;   /* inputs, pills, small buttons */
+  --radius-md: 8px;   /* cards, panels, modals */
+
+  /* ---- Elevation ---- */
+  --shadow-1: 0 1px 2px rgba(11,43,60,0.06), 0 1px 1px rgba(11,43,60,0.04); /* cards at rest */
+  --shadow-2: 0 4px 16px rgba(11,43,60,0.10); /* dropdowns, popovers */
+  --shadow-modal: 0 12px 40px rgba(11,43,60,0.30); /* modals, toasts */
+}
+
+/* ============================================================
+   Component-level conventions (not tokens, but rules that
+   were consistently applied across all prototype screens —
+   capture these in the component library, not just the CSS).
+   ============================================================ */
+
+/*
+  Button variants (matches lakepowell.com's own filled/outlined/
+  text-only + color-primary/color-secondary/color-white system):
+
+  .btn-filled-primary    background: var(--color-primary); color: #fff
+  .btn-filled-secondary  background: var(--color-secondary); color: #fff
+  .btn-outlined          transparent bg; border: var(--color-rim-light); color: var(--color-text)
+                         hover: border + text become var(--color-primary)
+  .btn-outlined-white    (dark backgrounds only) border: rgba(255,255,255,.5); color: #fff
+  .btn-text              transparent bg; color: var(--color-primary); minimal padding
+
+  Status pill (used for env status, drift, icon approval state):
+  pill = 6px dot (currentColor) + label, 11px bold text, 99px radius,
+  color/bg pulled from --color-status-* trio above. Never invent a
+  fourth status color — every state maps to ok / warn / bad.
+*/

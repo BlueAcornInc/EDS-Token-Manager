@@ -1,0 +1,635 @@
+{
+  "tabs": [
+    {
+      "id": "colors",
+      "label": "Colors",
+      "editable": true,
+      "schemaCategory": "colors",
+      "preview": "colors"
+    },
+    {
+      "id": "greys",
+      "label": "Greys",
+      "editable": true,
+      "schemaCategory": "greys",
+      "preview": "greys"
+    },
+    {
+      "id": "logo",
+      "label": "Logo",
+      "editable": true,
+      "schemaCategory": "logo",
+      "preview": "logo"
+    },
+    {
+      "id": "overview",
+      "label": "Overview",
+      "editable": false,
+      "preview": "overview",
+      "tokens": {}
+    },
+    {
+      "id": "typography",
+      "label": "Typography",
+      "editable": false,
+      "preview": "typography",
+      "readonlyNote": "For Reference Only! These are not brand-editable and are shared/calculated values",
+      "tokens": {
+        "bodyFontFamily": {
+          "cssVar": "--body-font-family",
+          "type": "string",
+          "default": "inter, inter-fallback, sans-serif",
+          "label": "Body font family",
+          "affects": ["paragraphs", "lists", "forms"]
+        },
+        "headingFontFamily": {
+          "cssVar": "--heading-font-family",
+          "type": "string",
+          "default": "petrona, petrona-fallback, montserrat, montserrat-fallback, sans-serif",
+          "label": "Heading font family",
+          "affects": ["h1–h4", "hero titles"]
+        },
+        "bodyFontSizeM": {
+          "cssVar": "--body-font-size-m",
+          "type": "string",
+          "default": "18px",
+          "label": "Body size M",
+          "affects": ["paragraphs"]
+        },
+        "bodyFontSizeS": {
+          "cssVar": "--body-font-size-s",
+          "type": "string",
+          "default": "16px",
+          "label": "Body size S",
+          "affects": ["secondary copy", "form labels"]
+        },
+        "bodyFontSizeXs": {
+          "cssVar": "--body-font-size-xs",
+          "type": "string",
+          "default": "14px",
+          "label": "Body size XS",
+          "affects": ["captions", "CTA labels"]
+        },
+        "bodyFontSizeXxs": {
+          "cssVar": "--body-font-size-xxs",
+          "type": "string",
+          "default": "12px",
+          "label": "Body size XXS",
+          "affects": ["micro text"]
+        },
+        "headingFontSizeH1": {
+          "cssVar": "--heading-font-size-h1",
+          "type": "string",
+          "default": "44px / 64px desktop",
+          "label": "Heading 1 size",
+          "affects": ["hero", "page titles"]
+        },
+        "headingFontSizeH2": {
+          "cssVar": "--heading-font-size-h2",
+          "type": "string",
+          "default": "24px / 34px desktop",
+          "label": "Heading 2 size",
+          "affects": ["section titles"]
+        },
+        "headingFontSizeH3": {
+          "cssVar": "--heading-font-size-h3",
+          "type": "string",
+          "default": "22px / 24px desktop",
+          "label": "Heading 3 size",
+          "affects": ["sub-sections", "cards"]
+        },
+        "headingFontSizeH4": {
+          "cssVar": "--heading-font-size-h4",
+          "type": "string",
+          "default": "20px",
+          "label": "Heading 4 size",
+          "affects": ["component titles"]
+        },
+        "eyebrowFontSizeM": {
+          "cssVar": "--eyebrow-font-size-m",
+          "type": "string",
+          "default": "14px",
+          "label": "Eyebrow size M",
+          "affects": ["hero eyebrow", "section labels"]
+        },
+        "letterSpacingTight": {
+          "cssVar": "--letter-spacing-tight",
+          "type": "string",
+          "default": "-0.02em",
+          "label": "Letter spacing tight",
+          "affects": ["headings", "accordion titles"]
+        },
+        "fontWeightLight": {
+          "cssVar": "--font-weight-light",
+          "type": "string",
+          "default": "300",
+          "label": "Font weight light",
+          "affects": ["display headings"]
+        },
+        "fontWeightMedium": {
+          "cssVar": "--font-weight-medium",
+          "type": "string",
+          "default": "500",
+          "label": "Font weight medium",
+          "affects": ["headings"]
+        },
+        "fontWeightBold": {
+          "cssVar": "--font-weight-bold",
+          "type": "string",
+          "default": "700",
+          "label": "Font weight bold",
+          "affects": ["buttons", "strong text"]
+        }
+      }
+    },
+    {
+      "id": "spacing",
+      "label": "Spacing",
+      "editable": false,
+      "preview": "spacing",
+      "readonlyNote": "Shared EDS spacing scale. Used for section padding, gaps, and layout rhythm.",
+      "tokens": {
+        "spacing004": {
+          "cssVar": "--spacing-004",
+          "type": "string",
+          "default": "4px",
+          "label": "Spacing 4",
+          "affects": ["tight gaps", "form field gaps"]
+        },
+        "spacing008": {
+          "cssVar": "--spacing-008",
+          "type": "string",
+          "default": "8px",
+          "label": "Spacing 8",
+          "affects": ["compact gaps", "icon padding"]
+        },
+        "spacing012": {
+          "cssVar": "--spacing-012",
+          "type": "string",
+          "default": "12px",
+          "label": "Spacing 12",
+          "affects": ["list gaps", "CTA rows"]
+        },
+        "spacing016": {
+          "cssVar": "--spacing-016",
+          "type": "string",
+          "default": "16px",
+          "label": "Spacing 16",
+          "affects": ["card padding", "section insets"]
+        },
+        "spacing024": {
+          "cssVar": "--spacing-024",
+          "type": "string",
+          "default": "24px",
+          "label": "Spacing 24",
+          "affects": ["form grids", "section gaps"]
+        },
+        "spacing032": {
+          "cssVar": "--spacing-032",
+          "type": "string",
+          "default": "32px",
+          "label": "Spacing 32",
+          "affects": ["form gap", "section padding"]
+        },
+        "spacing040": {
+          "cssVar": "--spacing-040",
+          "type": "string",
+          "default": "40px",
+          "label": "Spacing 40",
+          "affects": ["large section rhythm"]
+        },
+        "spacing048": {
+          "cssVar": "--spacing-048",
+          "type": "string",
+          "default": "48px",
+          "label": "Spacing 48",
+          "affects": ["hero padding"]
+        },
+        "spacing064": {
+          "cssVar": "--spacing-064",
+          "type": "string",
+          "default": "64px",
+          "label": "Spacing 64",
+          "affects": ["full-bleed section padding"]
+        },
+        "spacing096": {
+          "cssVar": "--spacing-096",
+          "type": "string",
+          "default": "96px",
+          "label": "Spacing 96",
+          "affects": ["extra-large vertical rhythm"]
+        }
+      }
+    },
+    {
+      "id": "radius",
+      "label": "Radius",
+      "editable": false,
+      "preview": "radius",
+      "readonlyNote": "Shared EDS corner-radius scale. Buttons often use a pill radius; cards and forms use smaller steps.",
+      "tokens": {
+        "radiusNone": {
+          "cssVar": "--radius-none",
+          "type": "string",
+          "default": "0px",
+          "label": "Radius none",
+          "affects": ["sharp corners"]
+        },
+        "radiusXs": {
+          "cssVar": "--radius-xs",
+          "type": "string",
+          "default": "2px",
+          "label": "Radius XS",
+          "affects": ["inputs", "checkboxes"]
+        },
+        "radiusS": {
+          "cssVar": "--radius-s",
+          "type": "string",
+          "default": "4px",
+          "label": "Radius S",
+          "affects": ["small chips", "fragment CTAs"]
+        },
+        "radiusM": {
+          "cssVar": "--radius-m",
+          "type": "string",
+          "default": "8px",
+          "label": "Radius M",
+          "affects": ["cards", "form themes", "images"]
+        },
+        "radiusL": {
+          "cssVar": "--radius-l",
+          "type": "string",
+          "default": "12px",
+          "label": "Radius L",
+          "affects": ["large panels"]
+        },
+        "radiusXl": {
+          "cssVar": "--radius-xl",
+          "type": "string",
+          "default": "16px",
+          "label": "Radius XL",
+          "affects": ["feature surfaces"]
+        },
+        "radiusFull": {
+          "cssVar": "--radius-full",
+          "type": "string",
+          "default": "999px",
+          "label": "Radius full (pill)",
+          "affects": ["pills", "tags"]
+        },
+        "buttonBorderRadius": {
+          "cssVar": "--button-border-radius",
+          "type": "string",
+          "default": "2.4em",
+          "label": "Button border radius",
+          "affects": ["all CTAs"]
+        }
+      }
+    },
+    {
+      "id": "alerts",
+      "label": "Alerts",
+      "editable": false,
+      "preview": "alerts",
+      "readonlyNote": "Shared EDS alert / status colors. Used for validation, banners, and utility surfaces.",
+      "tokens": {
+        "alertSuccess": {
+          "cssVar": "--color-alerts-success",
+          "type": "color",
+          "default": "#008545",
+          "label": "Success",
+          "affects": ["success banners", "utility surfaces"]
+        },
+        "alertCaution": {
+          "cssVar": "--color-alerts-caution",
+          "type": "color",
+          "default": "#edc700",
+          "label": "Caution",
+          "affects": ["warning banners"]
+        },
+        "alertError": {
+          "cssVar": "--color-alerts-error",
+          "type": "color",
+          "default": "#d73044",
+          "label": "Error",
+          "affects": ["form errors", "error banners"]
+        },
+        "alertGeneral": {
+          "cssVar": "--color-alerts-general",
+          "type": "color",
+          "default": "#0084ff",
+          "label": "General / info",
+          "affects": ["info banners", "input focus"]
+        }
+      }
+    },
+    {
+      "id": "surfaces",
+      "label": "Surfaces",
+      "editable": false,
+      "preview": "surfaces",
+      "readonlyNote": "Semantic surface layers from shared EDS. Site cream and dark surfaces can also be overridden via Colors.",
+      "tokens": {
+        "surfaceLight0": {
+          "cssVar": "--surface-light-0",
+          "type": "string",
+          "default": "var(--color-base-white)",
+          "label": "Light 0",
+          "affects": ["cards", "inputs", "page chrome"]
+        },
+        "surfaceLight1": {
+          "cssVar": "--surface-light-1",
+          "type": "string",
+          "default": "var(--color-grey-50)",
+          "label": "Light 1",
+          "affects": ["subtle panels", "form light theme"]
+        },
+        "surfaceLight2": {
+          "cssVar": "--surface-light-2",
+          "type": "string",
+          "default": "var(--color-grey-100)",
+          "label": "Light 2",
+          "affects": ["nested panels"]
+        },
+        "surfaceLight3": {
+          "cssVar": "--surface-light-3",
+          "type": "string",
+          "default": "var(--color-grey-200)",
+          "label": "Light 3",
+          "affects": ["stronger light panels"]
+        },
+        "surfaceDark0": {
+          "cssVar": "--surface-dark-0",
+          "type": "string",
+          "default": "var(--color-grey-900)",
+          "label": "Dark 0",
+          "affects": ["dark sections", "heroes"]
+        },
+        "surfaceDark1": {
+          "cssVar": "--surface-dark-1",
+          "type": "string",
+          "default": "var(--color-grey-800)",
+          "label": "Dark 1",
+          "affects": ["dark cards", "table stripes"]
+        },
+        "surfaceBgCream": {
+          "cssVar": "--surface-bg-cream",
+          "type": "color",
+          "default": "#f0efed",
+          "label": "Site cream (brandable)",
+          "affects": ["page background"]
+        }
+      }
+    },
+    {
+      "id": "buttons",
+      "label": "Buttons",
+      "editable": false,
+      "preview": "buttons",
+      "readonlyNote": "CTA / button tokens from shared EDS. Colors come from the Colors tab.",
+      "tokens": {
+        "buttonPaddingVertical": {
+          "cssVar": "--button-padding-vertical",
+          "type": "string",
+          "default": "0.5em",
+          "label": "Button padding vertical",
+          "affects": ["all CTAs"]
+        },
+        "buttonPaddingHorizontal": {
+          "cssVar": "--button-padding-horizontal",
+          "type": "string",
+          "default": "1.2em",
+          "label": "Button padding horizontal",
+          "affects": ["all CTAs"]
+        },
+        "buttonBorderRadius": {
+          "cssVar": "--button-border-radius",
+          "type": "string",
+          "default": "2.4em",
+          "label": "Button border radius",
+          "affects": ["all CTAs"]
+        },
+        "buttonBorderWidth": {
+          "cssVar": "--button-border-width",
+          "type": "string",
+          "default": "var(--weight-m)",
+          "label": "Button border width",
+          "affects": ["outlined CTAs"]
+        },
+        "buttonFontWeight": {
+          "cssVar": "--button-font-weight",
+          "type": "string",
+          "default": "var(--font-weight-bold)",
+          "label": "Button font weight",
+          "affects": ["all CTAs"]
+        },
+        "ctaFontSize": {
+          "cssVar": "--cta-font-size",
+          "type": "string",
+          "default": "var(--body-font-size-xs)",
+          "label": "CTA font size",
+          "affects": ["CTA labels"]
+        },
+        "buttonTouchTarget": {
+          "cssVar": "--button-touch-target",
+          "type": "string",
+          "default": "var(--sizing-048)",
+          "label": "Touch target",
+          "affects": ["mobile CTA hit area"]
+        }
+      }
+    },
+    {
+      "id": "hero",
+      "label": "Hero",
+      "editable": false,
+      "preview": "hero",
+      "readonlyNote": "Hero / banner presentation. Header and primary colors still come from the Colors tab.",
+      "tokens": {
+        "colorHeaderBackground": {
+          "cssVar": "--color-header-background",
+          "type": "string",
+          "default": "var(--color-secondary)",
+          "label": "Header / hero background",
+          "affects": ["hero", "header"]
+        },
+        "displayFontSize": {
+          "cssVar": "--display-font-size",
+          "type": "string",
+          "default": "44px / 64px desktop",
+          "label": "Display font size",
+          "affects": ["hero titles"]
+        }
+      }
+    },
+    {
+      "id": "cards",
+      "label": "Cards",
+      "editable": false,
+      "preview": "cards",
+      "readonlyNote": "Card and icon-card blocks. Accent colors follow brand primary / secondary.",
+      "tokens": {
+        "cardMinWidth": {
+          "cssVar": "--card-min-width",
+          "type": "string",
+          "default": "300px",
+          "label": "Card min width",
+          "affects": ["cards grid"]
+        },
+        "cardShadow": {
+          "cssVar": "--card-shadow",
+          "type": "string",
+          "default": "0 4px 16px rgb(0 0 0 / 20%)",
+          "label": "Card shadow",
+          "affects": ["cards"]
+        },
+        "shadowCardSubtle": {
+          "cssVar": "--shadow-card-subtle",
+          "type": "string",
+          "default": "0 5px 10px 0 rgb(0 0 0 / 5%)",
+          "label": "Subtle card shadow",
+          "affects": ["soft elevation"]
+        },
+        "iconSizeMedium": {
+          "cssVar": "--icons-size-icon-medium",
+          "type": "string",
+          "default": "var(--sizing-024)",
+          "label": "Icon size medium",
+          "affects": ["icon cards"]
+        }
+      }
+    },
+    {
+      "id": "accordion",
+      "label": "Accordion",
+      "editable": false,
+      "preview": "accordion",
+      "readonlyNote": "Accordion block tokens from shared EDS. Colors inherit text and stroke tokens.",
+      "tokens": {
+        "accordionTitleColor": {
+          "cssVar": "--accordion-title-color",
+          "type": "string",
+          "default": "var(--color-text-primary)",
+          "label": "Title color",
+          "affects": ["accordion titles"]
+        },
+        "accordionTitlePadding": {
+          "cssVar": "--accordion-title-padding",
+          "type": "string",
+          "default": "var(--spacing-016) 0",
+          "label": "Title padding",
+          "affects": ["accordion headers"]
+        },
+        "accordionBorderColor": {
+          "cssVar": "--accordion-border-color",
+          "type": "string",
+          "default": "var(--stroke-light-2)",
+          "label": "Border color",
+          "affects": ["accordion dividers"]
+        },
+        "accordionBodyPadding": {
+          "cssVar": "--accordion-body-padding",
+          "type": "string",
+          "default": "var(--spacing-008) var(--spacing-040) var(--spacing-024) 0",
+          "label": "Body padding",
+          "affects": ["accordion content"]
+        },
+        "accordionIconSize": {
+          "cssVar": "--accordion-icon-size",
+          "type": "string",
+          "default": "var(--icons-size-icon-medium)",
+          "label": "Icon size",
+          "affects": ["expand/collapse icon"]
+        }
+      }
+    },
+    {
+      "id": "forms",
+      "label": "Forms",
+      "editable": false,
+      "preview": "forms",
+      "readonlyNote": "Form field tokens from shared EDS. Focus and submit colors follow brand tokens.",
+      "tokens": {
+        "inputBorderRadius": {
+          "cssVar": "--input-border-radius",
+          "type": "string",
+          "default": "var(--radius-xs)",
+          "label": "Input border radius",
+          "affects": ["text inputs", "selects"]
+        },
+        "inputBorderColor": {
+          "cssVar": "--input-border-color",
+          "type": "string",
+          "default": "var(--color-grey-600)",
+          "label": "Input border color",
+          "affects": ["text inputs"]
+        },
+        "inputBorderColorFocus": {
+          "cssVar": "--input-border-color-focus",
+          "type": "string",
+          "default": "var(--color-alerts-general)",
+          "label": "Input focus color",
+          "affects": ["focused fields"]
+        },
+        "formInputBg": {
+          "cssVar": "--form-input-bg",
+          "type": "string",
+          "default": "var(--surface-light-0)",
+          "label": "Input background",
+          "affects": ["form fields"]
+        },
+        "formLabelFontSize": {
+          "cssVar": "--form-label-font-size",
+          "type": "string",
+          "default": "var(--body-font-size-s)",
+          "label": "Label font size",
+          "affects": ["field labels"]
+        },
+        "formGap": {
+          "cssVar": "--form-gap",
+          "type": "string",
+          "default": "var(--spacing-032)",
+          "label": "Form gap",
+          "affects": ["form layout"]
+        },
+        "formErrorColor": {
+          "cssVar": "--form-error-color",
+          "type": "string",
+          "default": "var(--color-alerts-error)",
+          "label": "Error color",
+          "affects": ["validation messages"]
+        }
+      }
+    },
+    {
+      "id": "quote",
+      "label": "Quote",
+      "editable": false,
+      "preview": "quote",
+      "readonlyNote": "Quote / testimonial block. Typography often uses heading or testimonial font tokens.",
+      "tokens": {
+        "testimonialFontFamily": {
+          "cssVar": "--testimonial-font-family",
+          "type": "string",
+          "default": "var(--heading-font-family)",
+          "label": "Testimonial font family",
+          "affects": ["quotes"]
+        },
+        "testimonialFontSize": {
+          "cssVar": "--testimonial-font-size",
+          "type": "string",
+          "default": "24px / 32px desktop",
+          "label": "Testimonial font size",
+          "affects": ["quotes"]
+        },
+        "testimonialFontWeight": {
+          "cssVar": "--testimonial-font-weight",
+          "type": "string",
+          "default": "250",
+          "label": "Testimonial font weight",
+          "affects": ["quotes"]
+        }
+      }
+    }
+  ]
+}

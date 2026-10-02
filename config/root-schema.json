@@ -1,0 +1,107 @@
+{
+  "colors": {
+    "primary":          { "type": "color",  "default": "#e87722", "label": "Primary" },
+    "primaryDark":      { "type": "color",  "default": "#c45e0a", "label": "Primary Dark" },
+    "primaryLight":     { "type": "color",  "default": "#f5a55a", "label": "Primary Light" },
+    "secondary":        { "type": "color",  "default": "#003865", "label": "Secondary" },
+    "secondaryDark":    { "type": "color",  "default": "#002448", "label": "Secondary Dark" },
+    "secondaryLight":   { "type": "color",  "default": "#005a9e", "label": "Secondary Light" },
+    "background":       { "type": "color",  "default": "#ffffff", "label": "Background" },
+    "surface":          { "type": "color",  "default": "#f5f5f5", "label": "Surface" },
+    "textPrimary":      { "type": "color",  "default": "#1a1a1a", "label": "Text Primary" },
+    "textSecondary":    { "type": "color",  "default": "#555555", "label": "Text Secondary" },
+    "textDisabled":     { "type": "color",  "default": "#999999", "label": "Text Disabled" },
+    "border":           { "type": "color",  "default": "#dddddd", "label": "Border" },
+    "error":            { "type": "color",  "default": "#d32f2f", "label": "Error" },
+    "warning":          { "type": "color",  "default": "#f57c00", "label": "Warning" },
+    "success":          { "type": "color",  "default": "#388e3c", "label": "Success" },
+    "info":             { "type": "color",  "default": "#1976d2", "label": "Info" }
+  },
+  "typography": {
+    "fontFamilyPrimary":    { "type": "string", "default": "\"Source Sans Pro\", Arial, sans-serif", "label": "Primary Font Family" },
+    "fontFamilySecondary":  { "type": "string", "default": "\"Merriweather\", Georgia, serif",       "label": "Secondary Font Family" },
+    "fontFamilyMono":       { "type": "string", "default": "\"Source Code Pro\", Consolas, monospace", "label": "Monospace Font Family" },
+    "fontSizeXs":           { "type": "size",   "default": "10px", "label": "Font Size XS" },
+    "fontSizeSm":           { "type": "size",   "default": "12px", "label": "Font Size SM" },
+    "fontSizeBase":         { "type": "size",   "default": "16px", "label": "Font Size Base" },
+    "fontSizeLg":           { "type": "size",   "default": "18px", "label": "Font Size LG" },
+    "fontSizeXl":           { "type": "size",   "default": "20px", "label": "Font Size XL" },
+    "fontSize2xl":          { "type": "size",   "default": "24px", "label": "Font Size 2XL" },
+    "fontSize3xl":          { "type": "size",   "default": "30px", "label": "Font Size 3XL" },
+    "fontSize4xl":          { "type": "size",   "default": "36px", "label": "Font Size 4XL" },
+    "fontWeightLight":      { "type": "string", "default": "300",  "label": "Font Weight Light" },
+    "fontWeightNormal":     { "type": "string", "default": "400",  "label": "Font Weight Normal" },
+    "fontWeightMedium":     { "type": "string", "default": "500",  "label": "Font Weight Medium" },
+    "fontWeightSemibold":   { "type": "string", "default": "600",  "label": "Font Weight Semibold" },
+    "fontWeightBold":       { "type": "string", "default": "700",  "label": "Font Weight Bold" },
+    "lineHeightTight":      { "type": "string", "default": "1.2",  "label": "Line Height Tight" },
+    "lineHeightBase":       { "type": "string", "default": "1.5",  "label": "Line Height Base" },
+    "lineHeightLoose":      { "type": "string", "default": "1.8",  "label": "Line Height Loose" }
+  },
+  "spacing": {
+    "spacing1":  { "type": "size", "default": "4px",  "label": "Spacing 1 (4px)" },
+    "spacing2":  { "type": "size", "default": "8px",  "label": "Spacing 2 (8px)" },
+    "spacing3":  { "type": "size", "default": "12px", "label": "Spacing 3 (12px)" },
+    "spacing4":  { "type": "size", "default": "16px", "label": "Spacing 4 (16px)" },
+    "spacing5":  { "type": "size", "default": "20px", "label": "Spacing 5 (20px)" },
+    "spacing6":  { "type": "size", "default": "24px", "label": "Spacing 6 (24px)" },
+    "spacing8":  { "type": "size", "default": "32px", "label": "Spacing 8 (32px)" },
+    "spacing10": { "type": "size", "default": "40px", "label": "Spacing 10 (40px)" },
+    "spacing12": { "type": "size", "default": "48px", "label": "Spacing 12 (48px)" },
+    "spacing16": { "type": "size", "default": "64px", "label": "Spacing 16 (64px)" }
+  },
+  "borders": {
+    "radiusSm":     { "type": "size",   "default": "2px",    "label": "Border Radius SM" },
+    "radiusMd":     { "type": "size",   "default": "4px",    "label": "Border Radius MD" },
+    "radiusLg":     { "type": "size",   "default": "8px",    "label": "Border Radius LG" },
+    "radiusXl":     { "type": "size",   "default": "12px",   "label": "Border Radius XL" },
+    "radiusPill":   { "type": "size",   "default": "9999px", "label": "Border Radius Pill" },
+    "widthThin":    { "type": "size",   "default": "1px",    "label": "Border Width Thin" },
+    "widthMedium":  { "type": "size",   "default": "2px",    "label": "Border Width Medium" },
+    "widthThick":   { "type": "size",   "default": "4px",    "label": "Border Width Thick" },
+    "styleDefault": { "type": "string", "default": "solid",  "label": "Border Style" }
+  },
+  "breakpoints": {
+    "mobile":     { "type": "size", "default": "480px",  "label": "Mobile" },
+    "tablet":     { "type": "size", "default": "768px",  "label": "Tablet" },
+    "desktop":    { "type": "size", "default": "1024px", "label": "Desktop" },
+    "wide":       { "type": "size", "default": "1280px", "label": "Wide" },
+    "ultrawide":  { "type": "size", "default": "1600px", "label": "Ultrawide" }
+  },
+  "button": {
+    "heightSm":     { "type": "size",   "default": "32px", "label": "Height SM" },
+    "heightMd":     { "type": "size",   "default": "40px", "label": "Height MD" },
+    "heightLg":     { "type": "size",   "default": "48px", "label": "Height LG" },
+    "paddingX":     { "type": "size",   "default": "16px", "label": "Horizontal Padding" },
+    "paddingXLg":   { "type": "size",   "default": "24px", "label": "Horizontal Padding LG" },
+    "borderRadius": { "type": "size",   "default": "4px",  "label": "Border Radius" },
+    "borderWidth":  { "type": "size",   "default": "2px",  "label": "Border Width" },
+    "fontWeight":   { "type": "string", "default": "600",  "label": "Font Weight" },
+    "fontSize":     { "type": "size",   "default": "14px", "label": "Font Size" }
+  },
+  "input": {
+    "height":       { "type": "size",   "default": "40px", "label": "Height" },
+    "heightLg":     { "type": "size",   "default": "48px", "label": "Height LG" },
+    "paddingX":     { "type": "size",   "default": "12px", "label": "Horizontal Padding" },
+    "paddingY":     { "type": "size",   "default": "8px",  "label": "Vertical Padding" },
+    "borderRadius": { "type": "size",   "default": "4px",  "label": "Border Radius" },
+    "borderWidth":  { "type": "size",   "default": "1px",  "label": "Border Width" },
+    "fontSize":     { "type": "size",   "default": "14px", "label": "Font Size" }
+  },
+  "card": {
+    "padding":      { "type": "size",   "default": "24px",                       "label": "Padding" },
+    "paddingSm":    { "type": "size",   "default": "16px",                       "label": "Padding SM" },
+    "borderRadius": { "type": "size",   "default": "8px",                        "label": "Border Radius" },
+    "borderWidth":  { "type": "size",   "default": "1px",                        "label": "Border Width" },
+    "shadow":       { "type": "string", "default": "0 2px 8px rgba(0,0,0,0.12)",  "label": "Box Shadow" },
+    "shadowHover":  { "type": "string", "default": "0 4px 16px rgba(0,0,0,0.18)", "label": "Box Shadow Hover" }
+  },
+  "navigation": {
+    "height":           { "type": "size",   "default": "64px", "label": "Nav Height" },
+    "heightMobile":     { "type": "size",   "default": "56px", "label": "Nav Height Mobile" },
+    "itemPaddingX":     { "type": "size",   "default": "16px", "label": "Item Horizontal Padding" },
+    "itemFontSize":     { "type": "size",   "default": "14px", "label": "Item Font Size" },
+    "itemFontWeight":   { "type": "string", "default": "600",  "label": "Item Font Weight" },
+    "dropdownShadow":   { "type": "string", "default": "0 8px 24px rgba(0,0,0,0.15)", "label": "Dropdown Shadow" }
+  }
+}

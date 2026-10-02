@@ -1,0 +1,223 @@
+{
+  "colors": {
+    "primary": {
+      "cssVar": "--color-primary",
+      "type": "color",
+      "default": "#eb002a",
+      "label": "Primary",
+      "affects": [
+        "hero",
+        "buttons",
+        "links",
+        "navigation",
+        "cards"
+      ]
+    },
+    "secondary": {
+      "cssVar": "--color-secondary",
+      "type": "color",
+      "default": "#022035",
+      "label": "Secondary",
+      "affects": [
+        "footer",
+        "secondary buttons",
+        "section backgrounds"
+      ]
+    },
+    "tertiary": {
+      "cssVar": "--color-tertiary",
+      "type": "color",
+      "default": "#022035",
+      "label": "Tertiary",
+      "affects": [
+        "tertiary buttons",
+        "badges",
+        "highlights"
+      ]
+    },
+    "headerBackground": {
+      "cssVar": "--color-header-background",
+      "type": "color",
+      "default": "#022035",
+      "label": "Header background",
+      "affects": [
+        "header"
+      ]
+    },
+    "siteBackground": {
+      "cssVar": "--surface-bg-cream",
+      "type": "color",
+      "default": "#f0efed",
+      "label": "Site background",
+      "affects": [
+        "page background",
+        "section backgrounds",
+        "light sections"
+      ]
+    },
+    "darkBackground": {
+      "cssVar": "--surface-dark-0",
+      "type": "color",
+      "default": "#041526",
+      "label": "Dark Background",
+      "affects": [
+        "dark sections background (Background Color: Dark in Sections/Heroes)"
+      ]
+    },
+    "darkSurface": {
+      "cssVar": "--surface-dark-1",
+      "type": "color",
+      "default": "#152a3f",
+      "label": "Dark Surface (Dark BG Table Stripe)",
+      "affects": [
+        "dark background table stripes",
+        "dark cards",
+        "dark overlays"
+      ]
+    }
+  },
+  "greys": {
+    "grey50": {
+      "cssVar": "--color-grey-50",
+      "type": "color",
+      "default": "#f6f9fb",
+      "label": "Grey 50",
+      "affects": [
+        "subtle backgrounds",
+        "hover states"
+      ]
+    },
+    "grey100": {
+      "cssVar": "--color-grey-100",
+      "type": "color",
+      "default": "#e7ecf1",
+      "label": "Grey 100",
+      "affects": [
+        "light borders",
+        "dividers",
+        "input backgrounds"
+      ]
+    },
+    "grey200": {
+      "cssVar": "--color-grey-200",
+      "type": "color",
+      "default": "#c4ccd8",
+      "label": "Grey 200",
+      "affects": [
+        "borders",
+        "dividers",
+        "disabled states"
+      ]
+    },
+    "grey300": {
+      "cssVar": "--color-grey-300",
+      "type": "color",
+      "default": "#abb5c5",
+      "label": "Grey 300",
+      "affects": [
+        "placeholder text",
+        "light text",
+        "borders"
+      ]
+    },
+    "grey400": {
+      "cssVar": "--color-grey-400",
+      "type": "color",
+      "default": "#727f96",
+      "label": "Grey 400",
+      "affects": [
+        "secondary text",
+        "icons",
+        "subtle elements"
+      ]
+    },
+    "grey500": {
+      "cssVar": "--color-grey-500",
+      "type": "color",
+      "default": "#4f5b76",
+      "label": "Grey 500",
+      "affects": [
+        "body text",
+        "secondary content"
+      ]
+    },
+    "grey600": {
+      "cssVar": "--color-grey-600",
+      "type": "color",
+      "default": "#3f4b66",
+      "label": "Grey 600",
+      "affects": [
+        "input borders",
+        "medium text"
+      ]
+    },
+    "grey700": {
+      "cssVar": "--color-grey-700",
+      "type": "color",
+      "default": "#2e3a55",
+      "label": "Grey 700",
+      "affects": [
+        "dark text",
+        "headings"
+      ]
+    },
+    "grey800": {
+      "cssVar": "--color-grey-800",
+      "type": "color",
+      "default": "#152a3f",
+      "label": "Grey 800",
+      "affects": [
+        "dark backgrounds",
+        "strong text"
+      ]
+    },
+    "grey900": {
+      "cssVar": "--color-grey-900",
+      "type": "color",
+      "default": "#041526",
+      "label": "Grey 900",
+      "affects": [
+        "darkest text",
+        "high contrast elements"
+      ]
+    }
+  },
+  "logo": {
+    "logoWidthMobile": {
+      "cssVar": "--brand-logo-width-mobile",
+      "type": "string",
+      "default": "154px",
+      "label": "Logo width (mobile)",
+      "affects": [
+        "header"
+      ]
+    },
+    "logoHeightMobile": {
+      "cssVar": "--brand-logo-height-mobile",
+      "type": "string",
+      "default": "34px",
+      "label": "Logo height (mobile)",
+      "affects": [
+        "header"
+      ]
+    },
+    "logoWidthDesktop": {
+      "cssVar": "--brand-logo-width-desktop",
+      "type": "string",
+      "default": "172px",
+      "label": "Logo width (desktop)",
+      "affects": [
+        "header"
+      ]
+    },
+    "logoHeightDesktop": {
+      "cssVar": "--brand-logo-height-desktop",
+      "type": "string",
+      "default": "38px",
+      "label": "Logo height (desktop)",
+      "affects": [
+        "header"
+      ]
+    }
+  }
+}
