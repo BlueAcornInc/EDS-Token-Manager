@@ -1,9 +1,9 @@
-# New Site: aramark-mb Repo Structure Guide
-*What the `create-site` action creates and updates in the aramark-mb EDS codebase*
+# New Site: TODO Repo Structure Guide
+*What the `create-site` action creates and updates in the TODO EDS codebase*
 
 ## Context
 
-When a user creates a new site in Trailhead, the `create-site` action writes to **aramark-mb** (the shared EDS codebase repo), not the Trailhead app repo. Aramark-mb is the repoless EDS "factory" — all brand sites share the same JavaScript codebase, differentiated by brand directories under `/brands/`.
+When a user creates a new site in Trailhead, the `create-site` action writes to **TODO* (the shared EDS codebase repo), not the Trailhead app repo. TODO is the repoless EDS "factory" — all brand sites share the same JavaScript codebase, differentiated by brand directories under `/brands/`.
 
 ---
 
