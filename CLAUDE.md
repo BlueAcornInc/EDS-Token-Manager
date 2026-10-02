@@ -1,14 +1,14 @@
-# CLAUDE.md — AramarkEDSTaskrunner (App Builder)
+# CLAUDE.md — EDSTaskrunner (App Builder)
 
 > Claude Code project instructions. See AGENTS.md for the full project reference.
 
 ## Project Overview
 
-**AramarkEDSTaskrunner** is an Adobe App Builder / Adobe I/O Runtime serverless application.
+**EDSTaskrunner** is an Adobe App Builder / Adobe I/O Runtime serverless application.
 It manages brand CSS design tokens and publishes them to GitHub as PRs. Not an EDS project —
 no block development, no AEM Admin API work.
 
-**Live URL:** `https://3924634-aramarkedstaskrunner.adobeio-static.net`
+**Live URL:** `TODO`
 
 ---
 
