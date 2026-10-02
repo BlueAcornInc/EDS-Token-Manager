@@ -37,8 +37,8 @@ const BASE_PARAMS = {
   GITHUB_APP_ID: 'x',
   GITHUB_APP_PRIVATE_KEY: 'x',
   GITHUB_APP_INSTALLATION_ID: 'x',
-  GITHUB_OWNER: 'aramark-destinations',
-  GITHUB_REPO: 'aramark-mb',
+  GITHUB_OWNER: 'TODO',
+  GITHUB_REPO: 'TODO',
 }
 
 function adminOk (preview = {}, live = {}, edit = {}) {
